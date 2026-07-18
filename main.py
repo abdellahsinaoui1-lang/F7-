@@ -310,9 +310,9 @@ def disor_get_member(guild: discord.Guild, target: str):
         }
 
     default_members = {
-        "ahmed": {
-            "id": "1234567899",
-            "global_name": "Hamada"
+        "abdallah": {
+            "id": "1435960918352859186",
+            "global_name": "abdallah"
         },
 
         "mostafa": {
@@ -336,8 +336,8 @@ def disor_get_member(guild: discord.Guild, target: str):
                     messages=[
                         {"role": "system", "content": "You going to take a name of member and search for one in the list and return its id ONLY\n- Don't chat with me, return ID ONLY!\n- be direct and retrun ID-\n-if you found two or more members with the same name choose one of them randomly"},
 
-                        {"role": "user", "content": f"حماده\nMembers: {default_members}"},
-                        {"role": "assistant", "content": "1234567899"},
+                        {"role": "user", "content": f"عبدالله\nMembers: {default_members}"},
+                        {"role": "assistant", "content": "1435960918352859186"},
 
                         {"role": "user", "content": f"mostafa iz\nMembers: {default_members}"},
                         {"role": "assistant", "content": "1321462575"},
@@ -429,8 +429,10 @@ async def on_message(m: discord.Message):
             
             final = m.content.replace(bot.user.mention, "")
 
-            async with m.channel.typing():
-                response = disor.chat.completions.create(
+        async with m.channel.typing():
+            print("سيتم إرسال الطلب إلى Groq...")
+                
+             response = disor.chat.completions.create(
                     model=MODEL,
                     messages=[
                         {"role": "system", "content": f"Look at the user message and see if he wants to talk or want action, also if the user is asking questions return 'USER_IS_MESSAGING'\nAbout you: {AiAbout}\nDON'T chat with the user just take his message and return: 'USER_IS_MESSAGING' or 'USER_WANTS_ACTION' ONLY"},
