@@ -1,5 +1,4 @@
 import json
-from groq import Groq as G
 import asyncio
 
 MODEL = "meta-llama/llama-4-scout-17b-16e-instruct"
