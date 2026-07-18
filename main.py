@@ -425,16 +425,21 @@ async def on_message(m: discord.Message):
     if m.author.id == bot.user.id:
         return
 
-        if bot.user.mention in m.content:
-            
-            final = m.content.replace(bot.user.mention, "")
+if bot.user.mention in m.content:
 
-        async with m.channel.typing():
-            print("سيتم إرسال الطلب إلى Groq...")
-                
-             response = disor.chat.completions.create(
-                    model=MODEL,
-                    messages=[
+    final = m.content.replace(bot.user.mention, "")
+
+    print("النص بعد حذف المنشن:", final)
+
+    async with m.channel.typing():
+        print("سيتم إرسال الطلب إلى Groq...")
+
+        response = disor.chat.completions.create(
+            model=MODEL,
+            messages=[
+                ...
+            ]
+        )
                         {"role": "system", "content": f"Look at the user message and see if he wants to talk or want action, also if the user is asking questions return 'USER_IS_MESSAGING'\nAbout you: {AiAbout}\nDON'T chat with the user just take his message and return: 'USER_IS_MESSAGING' or 'USER_WANTS_ACTION' ONLY"},
 
                         {"role": "user", "content": "عامل اي يسطا"},
