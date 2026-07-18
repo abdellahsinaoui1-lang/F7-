@@ -12,12 +12,12 @@ history = []
 
 def get_token():
     with open("data.json", "r") as file:
-        token = json.load(file)["TOKEN"]
+        token = json.load(file)["token"]
         return str(token)
     
 def get_key():
     with open("data.json", "r") as file:
-        key = json.load(file)["KEY"]
+        key = json.load(file)["groq_key"]
         return str(key)
     
 
