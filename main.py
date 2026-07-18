@@ -1,4 +1,3 @@
-from discord.ext import commands
 import json
 from groq import Groq as G
 import asyncio
