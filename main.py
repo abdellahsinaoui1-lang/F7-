@@ -10,15 +10,13 @@ GUILD = None
 
 history = []
 
+import os
+
 def get_token():
-    with open("data.json", "r") as file:
-        token = json.load(file)["token"]
-        return str(token)
-    
+    return os.getenv("TOKEN")
+
 def get_key():
-    with open("data.json", "r") as file:
-        key = json.load(file)["groq_key"]
-        return str(key)
+    return os.getenv("GROQ_KEY")
     
 
 disor = G(api_key=get_key())
