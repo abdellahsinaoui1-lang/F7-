@@ -65,7 +65,7 @@ def return_server_info(guild: discord.Guild):
 
 
 AiAbout = f"""
-You are a Discord bot named Disor 1.
+You are a Discord bot named fire bot.
 - Talk in Arabic only, NEVER use any other language
 - You help users manage their Discord server
 - talk friendly and talk with المصريه العاميه
@@ -421,6 +421,7 @@ async def run_commands(commands: list, guild: discord.Guild):
 
 @bot.event
 async def on_message(m: discord.Message):
+    print(f"تم استلام رسالة: {m.content}")
     if m.author.id == bot.user.id:
         return
 
