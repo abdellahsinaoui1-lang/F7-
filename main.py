@@ -580,4 +580,8 @@ async def on_message(m: discord.Message):
 
             
         
-bot.run(get_token())
+token = get_token()
+print("Token exists:", token is not None)
+print("Token length:", len(token) if token else 0)
+
+bot.run(token)
