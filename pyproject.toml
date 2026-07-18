@@ -1,0 +1,7 @@
+[project]
+name = "f7-bot"
+version = "1.0.0"
+dependencies = [
+    "discord.py>=2.6.3",
+    "groq>=0.31.0"
+]
