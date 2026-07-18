@@ -424,9 +424,6 @@ async def on_message(m: discord.Message):
     if m.author.id == bot.user.id:
         return
 
-    if m.channel.id == 1518721970223583374:
-        
-
         if bot.user.mention in m.content:
             
             final = m.content.replace(bot.user.mention, "")
